@@ -2,6 +2,13 @@
 import React from 'react';
 
 const Hero: React.FC = () => {
+  const scrollToUpload = () => {
+    const uploadSection = document.getElementById('upload');
+    if (uploadSection) {
+      uploadSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="section pt-10 md:pt-16">
       <div className="winner-container">
@@ -14,7 +21,7 @@ const Hero: React.FC = () => {
               Upload your video, compare it to a pro, and get feedback in seconds.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="btn-primary">Get Started</button>
+              <button onClick={scrollToUpload} className="btn-primary">Get Started</button>
               <a href="#how-it-works" className="btn-secondary">
                 Learn More
               </a>
